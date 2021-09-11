@@ -1,0 +1,191 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: dunbar-low, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
+  overflow: hidden;
+}
+
+.index {
+  background-color: black;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+li {
+  color: white;
+
+  a {
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-size: 1.5em;
+  }
+
+  span:hover {
+    color: orange;
+  }
+
+  span::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: orange;
+    transition: width 0.5s;
+  }
+
+  span:hover::after {
+    width: 100%;
+    transition: width 0.5s;
+  }
+}
+
+.hero {
+  padding-top: 26vh;
+  text-align: center;
+  color: white;
+}
+
+#name {
+  font-family: braisetto, script;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 5em;
+}
+
+#tagline {
+  font-size: 1.25em;
+  letter-spacing: 1px;
+}
+@mixin sp-layout {
+  @media screen and (max-width: 750px) {
+    @content;
+  }
+}
+@function random_range($min, $max) {
+  $rand: random();
+  $random_range: $min + floor($rand * (($max - $min) + 1));
+  @return $random_range;
+}
+
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 75%;
+  height: 10%;
+  transform: rotate(-45deg);
+}
+
+.star {
+  $star-count: 50;
+  --star-color: var(--primary-color);
+  --star-tail-length: 8em;
+  --star-tail-height: 2px;
+  --star-width: calc(var(--star-tail-length) / 6);
+  --fall-duration: 9s;
+  --tail-fade-duration: var(--fall-duration);
+  position: absolute;
+  top: var(--top-offset);
+  left: 0;
+  width: var(--star-tail-length);
+  height: var(--star-tail-height);
+  color: var(--star-color);
+  background: linear-gradient(45deg, orange, transparent);
+  border-radius: 50%;
+  filter: drop-shadow(0 0 6px orange);
+  transform: translate3d(104em, 0, 0);
+  animation: fall var(--fall-duration) var(--fall-delay) linear infinite, tail-fade var(--tail-fade-duration) var(--fall-delay) ease-out infinite;
+  @include sp-layout {
+    // For mobile performance, tail-fade animation will be removed QAQ
+    animation: fall var(--fall-duration) var(--fall-delay) linear infinite;
+  }
+  @for $i from 1 through $star-count {
+    &:nth-child(#{$i}) {
+      --star-tail-length: #{random_range(500em, 750em) / 100};
+      --top-offset: #{random_range(0vh, 10000vh) / 100};
+      --fall-duration: #{random_range(6000, 12000s) / 1000};
+      --fall-delay: #{random_range(0, 10000s) / 1000};
+    }
+  }
+
+  &::after,
+  &::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: calc(var(--star-width) / -2);
+    width: var(--star-width);
+    height: 100%;
+    background: linear-gradient(45deg, transparent, orange, transparent);
+    border-radius: inherit;
+    animation: blink 2s linear infinite;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+}
+@keyframes fall {
+  to {
+    transform: translate3d(-30em, 0, 0);
+  }
+}
+@keyframes tail-fade {
+  0%,
+  50% {
+    width: var(--star-tail-length);
+    opacity: 1;
+  }
+
+  70%,
+  80% {
+    width: 0;
+    opacity: 0.4;
+  }
+
+  100% {
+    width: 0;
+    opacity: 0;
+  }
+}
+@keyframes blink {
+  50% {
+    opacity: 0.6;
+  }
+}
+// media queries
+// X-Small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+  nav {
+    .links {
+      flex-flow: column;
+      justify-content: flex-end;
+      font-size: 0.5em;
+      text-align: right;
+      right: 5%;
+    }
+  }
+}
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) {}
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) {}
+// Large devices (desktops, less than 1200px)
+@media (max-width: 1199.98px) {}
+// X-Large devices (large desktops, less than 1400px)
+@media (max-width: 1399.98px) {}
