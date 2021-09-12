@@ -232,11 +232,11 @@ p {
   padding: 0;
 }
 
-.social-media-list li a {
+.social-media-list a li  {
   color: #fff;
 }
 
-.social-media-list li {
+.social-media-list a li {
   position: relative;
   display: inline-block;
   height: 60px;
@@ -248,9 +248,10 @@ p {
   background-color: rgb(27,27,27);
   cursor: pointer;
   transition: all 0.2s ease-in-out;
+  text-decoration: none;
 }
 
-.social-media-list li:after {
+.social-media-list a li:after {
   content: '';
   position: absolute;
   top: 0;
@@ -264,17 +265,17 @@ p {
   transition: all 0.2s ease-in-out;
 }
 
-.social-media-list li:hover {
+.social-media-list a li:hover {
   background-color: #fff;
 }
 
-.social-media-list li:hover:after {
+.social-media-list a li:hover:after {
   opacity: 1;
   transform: scale(1.12);
   transition-timing-function: cubic-bezier(0.37,0.74,0.15,1.65);
 }
 
-.social-media-list li:hover a {
+.social-media-list a li:hover {
   color: #000;
 }
 
