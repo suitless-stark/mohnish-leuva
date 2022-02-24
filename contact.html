@@ -5,18 +5,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Mohnish Leuva - Online Portfolio">
-  <meta name="keywords"
-    content="Mohnish Leuva, mohnish, leuva, portfolio, suitless stark, Web Design, UI/UX, Interactive Media Design, User Interface, User Experience">
+  <meta name="keywords" content="Mohnish Leuva, mohnish, leuva, portfolio, suitless stark, Web Design, UI/UX, Interactive Media Design, User Interface, User Experience">
   <meta name="author" content="Mohnish">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Contact - Mohnish Leuva</title>
   <link rel="shortcut icon" type="image/png" href="img/favicon.png">
-  <!-- adobe fonts linked -->
   <link rel="stylesheet" href="https://use.typekit.net/jwi1eot.css">
-  <!-- bootstrap css plugin -->
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <!-- custom css linked -->
+  <link rel="stylesheet" href="css/custom-cursor.min.css">
   <link rel="stylesheet" href="css/custom.min.css">
 </head>
 
@@ -91,16 +88,16 @@
             <div class="row g-3">
               <div class="col-12">
                 <label for="firstName" class="form-label text-muted">Name</label>
-                <input type="text" class="form-control" id="firstName" placeholder="Enter your name" value="" required
+                <input type="text" class="form-control" id="firstName" placeholder="Tony Stark" value="" required
                   name="name">
                 <div class="invalid-feedback">
-                  Valid name is required.
+                  Please enter a valid name.
                 </div>
               </div>
 
               <div class="col-12">
                 <label for="email" class="form-label text-muted">Email</label>
-                <input type="email" class="form-control" id="email" placeholder="you@example.com" required name="email">
+                <input type="email" class="form-control" id="email" placeholder="tony.stark@starkindustries.com" required name="email">
                 <div class="invalid-feedback">
                   Please enter a valid email address.
                 </div>
@@ -108,7 +105,7 @@
 
               <div class="col-12">
                 <label for="message" class="form-label text-muted">Message</label>
-                <textarea class="form-control" rows="10" placeholder="Write your message" name="message"
+                <textarea class="form-control" rows="10" placeholder="Hello Mohnish, How's it going?" name="message"
                   required></textarea>
                 <div class="invalid-feedback">
                   Please enter a message.
@@ -127,16 +124,15 @@
     </main>
   </div>
 
-  <!-- jquery linked -->
+  <div class="cursor"></div>
+  <div class="cursor2"></div>
+
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
-  <!-- bootstrap bundle js linked -->
   <script src="https://use.fontawesome.com/20ab91acc4.js"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"
-    integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous">
-  </script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
   <script src="js/form-validation.js" charset="utf-8"></script>
-  <!-- custom js linked -->
+  <script src="js/cursor.js"></script>
   <script src="js/custom.js"></script>
 </body>
 

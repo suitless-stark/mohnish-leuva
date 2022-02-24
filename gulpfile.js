@@ -19,7 +19,7 @@ function serve (done) {
 
 // Styles Task
 function styles (done) {
-    gulp.src('css/custom.scss')
+    gulp.src('css/*.scss')
         .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
         .pipe(rename({suffix: '.min'}))
         .pipe(minifyCss())

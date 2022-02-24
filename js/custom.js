@@ -5,15 +5,6 @@
     $('.loader').delay(2000).fadeOut(500);
   });
 
-  // window.addEventListener('load', function(event) {
-  //   console.log('page is fully loaded');
-  //   function fade() {
-  //     setTimeout(fade, 50000);
-  //     document.querySelector('.loader').style.opacity = 0;
-  //   }
-  //   fade();
-  // });
-
   // typewriter animation
   function typeWriter() {
     var i = 0;
